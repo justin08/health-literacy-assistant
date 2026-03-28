@@ -1,0 +1,32 @@
+/* Accessibility improvements for patient-facing interface */
+.main {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #34495e;
+}
+
+.stButton button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.stAlert {
+    font-size: 1rem;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .main {
+        background: black;
+        color: white;
+    }
+}
