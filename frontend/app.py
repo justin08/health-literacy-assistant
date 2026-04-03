@@ -11,7 +11,7 @@ from pages.admin import show_admin_panel
 # Page config
 st.set_page_config(
     page_title="Health Literacy Assistant",
-    page_icon="",
+    page_icon="🏥",
     layout="wide"
 )
 
@@ -54,7 +54,7 @@ with st.sidebar:
     # User info
     st.markdown(f"""
     <div style='text-align:center; padding:1rem; background:#F0F2F6; border-radius:12px;'>
-        <div style='font-size:2rem;'></div>
+        <div style='font-size:2rem;'>👤</div>
         <h3>{st.session_state.user_name}</h3>
         <p>{st.session_state.user_role.upper()}</p>
     </div>
@@ -69,7 +69,6 @@ with st.sidebar:
         patients = st.session_state.api_client.get_all_patients()
         if patients:
             patient_names = [p['name'] for p in patients]
-            # Use session state to track selected patient
             default_index = 0
             if st.session_state.selected_patient_name in patient_names:
                 default_index = patient_names.index(st.session_state.selected_patient_name)
@@ -81,11 +80,9 @@ with st.sidebar:
                 key="patient_selector"
             )
             
-            # Update session state when selection changes
             if selected_name != st.session_state.selected_patient_name:
                 st.session_state.selected_patient_name = selected_name
                 st.session_state.viewing_patient = next(p['id'] for p in patients if p['name'] == selected_name)
-                # Force refresh of current page
                 st.rerun()
             
             current_patient = st.session_state.viewing_patient
@@ -93,30 +90,30 @@ with st.sidebar:
     st.markdown("---")
     
     # Navigation buttons
-    if st.button("Dashboard", use_container_width=True):
+    if st.button("🏠 Dashboard", use_container_width=True):
         st.session_state.current_page = "dashboard"
         st.rerun()
     
-    if st.button("Medical Records", use_container_width=True):
+    if st.button("📋 Medical Records", use_container_width=True):
         st.session_state.current_page = "records"
         st.rerun()
     
-    if st.button("Translation Assistant", use_container_width=True):
+    if st.button("💬 Translation Assistant", use_container_width=True):
         st.session_state.current_page = "assistant"
         st.rerun()
     
     if st.session_state.user_role == 'admin':
-        if st.button("Admin Panel", use_container_width=True):
+        if st.button("👑 Admin Panel", use_container_width=True):
             st.session_state.current_page = "admin"
             st.rerun()
     
     st.markdown("---")
     
     # Status
-    st.success("Mock Mode")
+    st.success("✅ Mock Mode")
     st.caption(f"Logged in: {st.session_state.user_name}")
     
-    if st.button("Logout", use_container_width=True):
+    if st.button("🚪 Logout", use_container_width=True):
         st.session_state.logged_in = False
         st.session_state.user_role = None
         st.session_state.patient_id = None
@@ -143,17 +140,19 @@ if st.session_state.current_page == "dashboard":
     st.title(f"Welcome, {st.session_state.user_name}!")
     st.markdown("### Your Health Literacy Assistant")
     
-    # Get patient data for stats
-    obs = st.session_state.api_client.get_patient_observations(patient_id) if patient_id else []
+    # Get ALL patient data for stats
+    conditions = st.session_state.api_client.get_patient_conditions(patient_id) if patient_id else []
+    medications = st.session_state.api_client.get_patient_medications(patient_id) if patient_id else []
+    observations = st.session_state.api_client.get_patient_observations(patient_id) if patient_id else []
     
     # Stats
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.metric("Lab Results", len(obs) if obs else 0)
+        st.metric("Conditions", len(conditions) if conditions else 0)
     with col2:
-        st.metric("Conditions", 0)
+        st.metric("Medications", len(medications) if medications else 0)
     with col3:
-        st.metric("Medications", 0)
+        st.metric("Lab Results", len(observations) if observations else 0)
     
     st.markdown("---")
     
@@ -188,35 +187,56 @@ elif st.session_state.current_page == "records":
         current_name = next((p['name'] for p in patients if p['id'] == patient_id), patient_id)
         st.info(f"Viewing: {current_name}")
         
-        # Get observations
-        obs = st.session_state.api_client.get_patient_observations(patient_id)
+        # Get ALL data
+        conditions = st.session_state.api_client.get_patient_conditions(patient_id)
+        medications = st.session_state.api_client.get_patient_medications(patient_id)
+        observations = st.session_state.api_client.get_patient_observations(patient_id)
         
-        if obs and len(obs) > 0:
-            st.success(f"Found {len(obs)} measurements for this patient")
-            
-            # Display all measurements
-            st.subheader("All Measurements")
-            
-            # Group by test name for better organization
-            tests = {}
-            for o in obs:
-                test_name = o['display']
-                if test_name not in tests:
-                    tests[test_name] = []
-                tests[test_name].append(o)
-            
-            # Show each test group
-            for test_name, values in sorted(tests.items()):
-                with st.expander(f"{test_name} ({len(values)} records)"):
-                    for v in values:
-                        flag = " " if v.get('flag') else ""
-                        date = v.get('effective_date', 'Unknown')
-                        value = v.get('value', 'N/A')
-                        unit = v.get('unit', '')
-                        st.write(f"  {flag}{value} {unit} - {date}")
-        else:
-            st.warning("No measurements found for this patient")
-            st.info("This patient has no observation data in the JSON file.")
+        # Create tabs
+        tab1, tab2, tab3 = st.tabs(["🏷️ Conditions", "💊 Medications", "🧪 Lab Results"])
+        
+        with tab1:
+            if conditions and len(conditions) > 0:
+                st.success(f"Found {len(conditions)} conditions")
+                for c in conditions:
+                    with st.expander(f"📋 {c['display']}"):
+                        st.write(f"**Status:** {c['clinical_status']}")
+                        st.write(f"**Date:** {c['recorded_date']}")
+            else:
+                st.info("No conditions found for this patient")
+        
+        with tab2:
+            if medications and len(medications) > 0:
+                st.success(f"Found {len(medications)} medications")
+                for m in medications:
+                    with st.expander(f"💊 {m['medication_name']}"):
+                        st.write(f"**Instructions:** {m['instructions']}")
+                        st.write(f"**Prescribed:** {m['prescribed_date']}")
+            else:
+                st.info("No medications found for this patient")
+        
+        with tab3:
+            if observations and len(observations) > 0:
+                st.success(f"Found {len(observations)} lab results")
+                
+                # Group by test name
+                tests = {}
+                for o in observations:
+                    test_name = o['display']
+                    if test_name not in tests:
+                        tests[test_name] = []
+                    tests[test_name].append(o)
+                
+                for test_name, values in sorted(tests.items()):
+                    with st.expander(f"📊 {test_name} ({len(values)} records)"):
+                        for v in values:
+                            flag = "⚠️ " if v.get('flag') else ""
+                            date = v.get('effective_date', 'Unknown')
+                            value = v.get('value', 'N/A')
+                            unit = v.get('unit', '')
+                            st.write(f"  {flag}{value} {unit} - {date}")
+            else:
+                st.info("No lab results found for this patient")
 
 # Translation Assistant
 elif st.session_state.current_page == "assistant":
