@@ -109,8 +109,16 @@ with st.sidebar:
     
     st.markdown("---")
     
-    # Status
-    st.success("✅ Mock Mode")
+    # status - check if backend is actually reachable
+    health = st.session_state.api_client.health_check()
+    if health.get("backend"):
+        st.success("Backend Connected")
+        if health.get("rag_ready"):
+            st.caption("RAG pipeline active")
+        else:
+            st.caption("Fallback mode (no API key)")
+    else:
+        st.warning("Mock Mode (no backend)")
     st.caption(f"Logged in: {st.session_state.user_name}")
     
     if st.button("🚪 Logout", use_container_width=True):

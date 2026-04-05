@@ -1,0 +1,586 @@
+[
+  {
+    "term": "hypertension",
+    "category": "condition",
+    "title": "High Blood Pressure (Hypertension)",
+    "explanation": "Your blood pressure is higher than normal. This means your heart is working harder than it should to push blood through your body. Over time, this can damage your heart and blood vessels if not managed.",
+    "what_it_means": "Think of your blood vessels like a garden hose. When the pressure inside is too high, it puts extra stress on the hose walls. Your doctor wants to bring that pressure down to protect your heart, kidneys, and brain.",
+    "normal_range": "Normal blood pressure is below 120/80 mmHg. High blood pressure is 130/80 or above.",
+    "when_to_worry": "If your blood pressure goes above 180/120, that is a crisis. Call your doctor right away or go to the emergency room. Also tell your doctor if you get frequent headaches, blurry vision, or chest pain.",
+    "tips": [
+      "cut back on salt in your food",
+      "try to walk or move for 30 minutes most days",
+      "take your blood pressure medicine at the same time every day",
+      "limit alcohol and try to manage stress"
+    ],
+    "sources": ["American Heart Association", "MedlinePlus"]
+  },
+  {
+    "term": "diabetes",
+    "category": "condition",
+    "title": "Diabetes (Type 2 Diabetes Mellitus)",
+    "explanation": "Your body has trouble using sugar from food for energy. The sugar builds up in your blood instead of getting into your cells where it is needed. This happens because your body does not make enough insulin or does not use it well.",
+    "what_it_means": "Insulin is like a key that opens the door to your cells so sugar can get in. With diabetes, that key does not work as well. Your doctor will help you manage your blood sugar with medicine, food choices, and activity.",
+    "normal_range": "A normal fasting blood sugar is under 100 mg/dL. A diabetes diagnosis usually happens at 126 mg/dL or higher.",
+    "when_to_worry": "If your blood sugar drops below 70 or goes above 300, contact your doctor. Watch for signs like feeling very thirsty, needing to pee a lot, blurry vision, or feeling shaky and confused.",
+    "tips": [
+      "eat regular meals and do not skip breakfast",
+      "choose whole grains, vegetables, and lean protein",
+      "check your blood sugar as often as your doctor recommends",
+      "keep sugary drinks to a minimum"
+    ],
+    "sources": ["American Diabetes Association", "CDC"]
+  },
+  {
+    "term": "hyperlipidemia",
+    "category": "condition",
+    "title": "High Cholesterol (Hyperlipidemia)",
+    "explanation": "There is too much cholesterol or fat in your blood. Cholesterol is a waxy substance that can build up inside your blood vessels over time. If it builds up too much, it can block blood flow to your heart or brain.",
+    "what_it_means": "Think of cholesterol like grease building up in a pipe. A little is normal, but too much can cause clogs. Your doctor wants to lower your levels to keep your blood flowing smoothly.",
+    "normal_range": "Total cholesterol should be under 200 mg/dL. LDL (bad cholesterol) should be under 100 mg/dL. HDL (good cholesterol) should be 60 or above.",
+    "when_to_worry": "High cholesterol usually has no symptoms, so regular blood tests are important. If you have chest pain, shortness of breath, or sudden numbness, get emergency help right away.",
+    "tips": [
+      "eat less fried food and red meat",
+      "add more fish, nuts, and vegetables to your meals",
+      "exercise regularly even if it is just walking",
+      "take your statin medication if prescribed"
+    ],
+    "sources": ["American Heart Association", "MedlinePlus"]
+  },
+  {
+    "term": "a1c",
+    "category": "lab_test",
+    "title": "Hemoglobin A1c Test",
+    "explanation": "The A1c test shows your average blood sugar level over the past 2 to 3 months. It is like a report card for how well your blood sugar has been controlled. A single blood sugar reading only shows one moment, but A1c shows the bigger picture.",
+    "what_it_means": "Sugar sticks to a protein in your red blood cells called hemoglobin. The A1c test measures how much sugar is stuck to those cells. Since red blood cells live about 3 months, this test gives a longer view of your blood sugar.",
+    "normal_range": "A normal A1c is below 5.7%. Prediabetes is 5.7% to 6.4%. Diabetes is 6.5% or higher. Most people with diabetes aim for an A1c under 7%.",
+    "when_to_worry": "If your A1c is above 9%, your blood sugar has been very high and you should work with your doctor to adjust your treatment plan.",
+    "tips": [
+      "keep a food diary to spot patterns",
+      "take a short walk after meals to help lower blood sugar",
+      "talk to your doctor about a healthy eating plan that works for you"
+    ],
+    "sources": ["American Diabetes Association", "MedlinePlus"]
+  },
+  {
+    "term": "glucose",
+    "category": "lab_test",
+    "title": "Blood Glucose (Blood Sugar)",
+    "explanation": "Glucose is the main sugar in your blood. It comes from the food you eat and is your body's main source of energy. Your doctor checks this to see if your blood sugar is in a healthy range.",
+    "what_it_means": "Your body turns carbohydrates from food into glucose. Then insulin helps move that glucose into your cells for energy. If there is too much glucose left in your blood, it can cause problems over time.",
+    "normal_range": "Fasting blood sugar should be between 70 and 100 mg/dL. After eating, it should be under 140 mg/dL.",
+    "when_to_worry": "Blood sugar under 70 mg/dL (low) can make you feel shaky, sweaty, or confused. Blood sugar above 300 mg/dL (high) needs medical attention.",
+    "tips": [
+      "eat balanced meals with protein, fiber, and healthy fats",
+      "avoid large amounts of sugary foods at once",
+      "stay hydrated with water"
+    ],
+    "sources": ["MedlinePlus", "American Diabetes Association"]
+  },
+  {
+    "term": "cholesterol",
+    "category": "lab_test",
+    "title": "Cholesterol Panel (Lipid Panel)",
+    "explanation": "A cholesterol test measures different types of fats in your blood. There are two main kinds: LDL is called bad cholesterol because it can clog your arteries, and HDL is called good cholesterol because it helps clean them out.",
+    "what_it_means": "Your doctor uses this test to check your risk for heart disease. High LDL or low HDL can mean you are at higher risk. The good news is you can improve these numbers with lifestyle changes and sometimes medication.",
+    "normal_range": "Total cholesterol under 200, LDL under 100, HDL above 60, triglycerides under 150 mg/dL.",
+    "when_to_worry": "LDL above 190 or total cholesterol above 240 is considered high risk. Your doctor may recommend medication in addition to diet and exercise changes.",
+    "tips": [
+      "choose olive oil instead of butter",
+      "eat more fiber from oats, beans, and fruits",
+      "limit processed and fast food"
+    ],
+    "sources": ["American Heart Association", "CDC"]
+  },
+  {
+    "term": "lisinopril",
+    "category": "medication",
+    "title": "Lisinopril (ACE Inhibitor)",
+    "explanation": "Lisinopril is a medicine that helps lower your blood pressure. It works by relaxing your blood vessels so blood can flow more easily. This takes pressure off your heart and helps protect your kidneys.",
+    "what_it_means": "This medicine belongs to a group called ACE inhibitors. ACE is a chemical in your body that makes blood vessels tighten. Lisinopril blocks that chemical, so your vessels stay relaxed.",
+    "normal_range": "Your doctor will set a target blood pressure for you, usually under 130/80.",
+    "when_to_worry": "Tell your doctor if you develop a persistent dry cough, swelling in your face or throat, or feel dizzy when standing up. Do not stop taking it without talking to your doctor first.",
+    "tips": [
+      "take it at the same time every day",
+      "drink plenty of water",
+      "stand up slowly to avoid feeling dizzy",
+      "avoid potassium supplements unless your doctor says otherwise"
+    ],
+    "sources": ["MedlinePlus", "Mayo Clinic"]
+  },
+  {
+    "term": "metformin",
+    "category": "medication",
+    "title": "Metformin (Diabetes Medication)",
+    "explanation": "Metformin helps your body handle sugar better. It lowers the amount of sugar your liver makes and helps your body use insulin more effectively. It is usually the first medicine prescribed for type 2 diabetes.",
+    "what_it_means": "Your liver sometimes makes too much sugar on its own. Metformin tells your liver to slow down and also helps your muscles use the sugar that is already in your blood. This brings your blood sugar levels down.",
+    "normal_range": "Your doctor will monitor your A1c and blood sugar to make sure metformin is working. The goal is usually an A1c under 7%.",
+    "when_to_worry": "Tell your doctor if you have severe stomach pain, nausea, vomiting, or unusual muscle pain. These could be signs of a rare but serious side effect. Mild stomach upset is common when you first start and usually goes away.",
+    "tips": [
+      "take it with food to reduce stomach upset",
+      "do not drink a lot of alcohol while on this medicine",
+      "keep taking it even if you feel fine",
+      "get regular blood work as your doctor recommends"
+    ],
+    "sources": ["American Diabetes Association", "MedlinePlus"]
+  },
+  {
+    "term": "simvastatin",
+    "category": "medication",
+    "title": "Simvastatin (Statin Medication)",
+    "explanation": "Simvastatin is a statin that helps lower your cholesterol. It works by slowing down how much cholesterol your liver makes. Lower cholesterol means less buildup in your blood vessels and lower risk of heart attack or stroke.",
+    "what_it_means": "Your liver makes most of the cholesterol in your body. Simvastatin blocks one of the steps in that process so your liver produces less. It also helps your body remove cholesterol that is already in your blood.",
+    "normal_range": "Your doctor will check your cholesterol levels with blood tests. The goal is usually LDL under 100 mg/dL, or lower if you have heart disease.",
+    "when_to_worry": "Contact your doctor if you have unexplained muscle pain, tenderness, or weakness, especially with fever. Also report dark-colored urine or yellowing of your skin or eyes.",
+    "tips": [
+      "take it in the evening since your body makes more cholesterol at night",
+      "avoid grapefruit juice which can affect how the medicine works",
+      "keep up with a heart-healthy diet alongside the medication"
+    ],
+    "sources": ["American Heart Association", "MedlinePlus"]
+  },
+  {
+    "term": "atorvastatin",
+    "category": "medication",
+    "title": "Atorvastatin (Lipitor)",
+    "explanation": "Atorvastatin is a statin medication that lowers cholesterol and fats in your blood. It reduces your risk of heart attack and stroke by keeping your arteries clear. It is one of the most commonly prescribed cholesterol medicines.",
+    "what_it_means": "Like other statins, atorvastatin tells your liver to make less cholesterol. It is especially good at lowering LDL, the kind of cholesterol that clogs arteries.",
+    "normal_range": "Your doctor will tell you your cholesterol targets based on your overall health and risk factors.",
+    "when_to_worry": "Report any unexplained muscle pain or weakness to your doctor. Also tell them if you have stomach pain, nausea, or dark urine.",
+    "tips": [
+      "you can take this one at any time of day",
+      "keep eating healthy even while on this medicine",
+      "get your cholesterol checked regularly"
+    ],
+    "sources": ["Mayo Clinic", "MedlinePlus"]
+  },
+  {
+    "term": "ibuprofen",
+    "category": "medication",
+    "title": "Ibuprofen (Advil, Motrin)",
+    "explanation": "Ibuprofen is a pain reliever that also reduces swelling and fever. It belongs to a group called NSAIDs. It works by blocking chemicals in your body that cause pain and inflammation.",
+    "what_it_means": "When you are hurt or sick, your body makes chemicals called prostaglandins that cause pain, swelling, and fever. Ibuprofen blocks those chemicals so you feel better.",
+    "normal_range": "Adults can usually take 200-400mg every 4 to 6 hours as needed. Do not take more than 1200mg per day unless your doctor says to.",
+    "when_to_worry": "Stop taking it and call your doctor if you have stomach pain, black or bloody stools, vomiting blood, or an allergic reaction like trouble breathing or swelling.",
+    "tips": [
+      "take it with food or milk to protect your stomach",
+      "do not use it for more than 10 days without asking your doctor",
+      "drink plenty of water while taking it"
+    ],
+    "sources": ["MedlinePlus", "FDA"]
+  },
+  {
+    "term": "coronary artery disease",
+    "category": "condition",
+    "title": "Coronary Artery Disease (CAD)",
+    "explanation": "The blood vessels that bring blood to your heart have gotten narrower because of buildup on their walls. This means your heart might not get enough blood and oxygen, especially when you are active.",
+    "what_it_means": "Plaque, which is made of cholesterol and other stuff, builds up inside your heart arteries over the years. As the opening gets smaller, less blood can flow through. This can lead to chest pain or even a heart attack.",
+    "normal_range": "Healthy arteries have no significant blockage. Your doctor may use imaging tests to check for narrowing.",
+    "when_to_worry": "Get emergency help if you have chest pain or pressure, shortness of breath, pain in your arm or jaw, or sudden sweating with nausea. These could be signs of a heart attack.",
+    "tips": [
+      "follow a heart-healthy diet low in saturated fat",
+      "stay active with regular exercise your doctor approves",
+      "take all prescribed medications as directed",
+      "quit smoking if you smoke"
+    ],
+    "sources": ["American Heart Association", "National Heart, Lung, and Blood Institute"]
+  },
+  {
+    "term": "heart failure",
+    "category": "condition",
+    "title": "Heart Failure (Congestive Heart Failure)",
+    "explanation": "Heart failure does not mean your heart has stopped. It means your heart is not pumping as well as it should. Your body might not get enough blood and oxygen, and fluid can build up in your lungs or legs.",
+    "what_it_means": "Your heart is like a pump. When it gets weak or stiff, it cannot push blood out efficiently. This can make you feel tired, short of breath, or cause swelling in your ankles and feet.",
+    "normal_range": "A healthy heart pumps about 55-70% of the blood in it with each beat (called ejection fraction). Below 40% is considered reduced.",
+    "when_to_worry": "Call your doctor if you notice sudden weight gain (more than 2-3 pounds in a day), worse swelling, trouble breathing when lying down, or a new cough.",
+    "tips": [
+      "weigh yourself every morning and track it",
+      "limit salt to reduce fluid buildup",
+      "take your medications exactly as prescribed",
+      "keep your follow-up appointments"
+    ],
+    "sources": ["American Heart Association", "MedlinePlus"]
+  },
+  {
+    "term": "asthma",
+    "category": "condition",
+    "title": "Asthma",
+    "explanation": "Asthma makes the airways in your lungs swell up and get narrow. This makes it harder to breathe, especially during an asthma attack. You might wheeze, cough, or feel tightness in your chest.",
+    "what_it_means": "Your airways are like tubes that carry air in and out of your lungs. With asthma, those tubes are sensitive and react to things like dust, smoke, cold air, or exercise by swelling up and making extra mucus.",
+    "normal_range": "Well-controlled asthma means you use your rescue inhaler 2 or fewer times per week and your symptoms do not wake you up at night.",
+    "when_to_worry": "Use your rescue inhaler and seek emergency help if you are struggling to breathe, your lips or fingernails turn blue, or your inhaler is not helping.",
+    "tips": [
+      "know your triggers and try to avoid them",
+      "take your controller medication daily even when you feel fine",
+      "always carry your rescue inhaler",
+      "follow your asthma action plan"
+    ],
+    "sources": ["American Lung Association", "CDC"]
+  },
+  {
+    "term": "copd",
+    "category": "condition",
+    "title": "COPD (Chronic Obstructive Pulmonary Disease)",
+    "explanation": "COPD is a lung disease that makes it hard to breathe. Air gets trapped in your lungs and you may feel short of breath, especially with activity. It usually gets worse over time but treatment can help you feel better.",
+    "what_it_means": "COPD includes two main problems: chronic bronchitis (swollen airways that make too much mucus) and emphysema (damaged air sacs in your lungs). Both make it harder to get air in and out. Smoking is the most common cause.",
+    "normal_range": "Lung function is measured by a breathing test called spirometry. Normal FEV1 is 80% or higher of predicted value.",
+    "when_to_worry": "Get help right away if you are much more short of breath than usual, your rescue inhaler is not working, or you have a fever with worse coughing and discolored mucus.",
+    "tips": [
+      "quit smoking if you have not already",
+      "use your inhalers as prescribed",
+      "stay active within your limits",
+      "get your flu and pneumonia vaccines"
+    ],
+    "sources": ["American Lung Association", "COPD Foundation"]
+  },
+  {
+    "term": "anemia",
+    "category": "condition",
+    "title": "Anemia (Low Red Blood Cells)",
+    "explanation": "Anemia means you do not have enough healthy red blood cells to carry oxygen to your body. This can make you feel tired, weak, or short of breath. There are many types, but iron deficiency anemia is the most common.",
+    "what_it_means": "Red blood cells carry oxygen from your lungs to the rest of your body. If you do not have enough of them, or they do not work well, your organs and muscles do not get the oxygen they need. That is why you feel tired.",
+    "normal_range": "Normal hemoglobin is 12-16 g/dL for women and 14-18 g/dL for men.",
+    "when_to_worry": "See your doctor if you feel very tired all the time, look pale, have a fast heartbeat, or feel dizzy. Severe anemia can be serious and needs treatment.",
+    "tips": [
+      "eat iron-rich foods like spinach, red meat, and beans",
+      "vitamin C helps your body absorb iron, so eat citrus fruits with meals",
+      "take iron supplements if your doctor prescribes them"
+    ],
+    "sources": ["MedlinePlus", "National Heart, Lung, and Blood Institute"]
+  },
+  {
+    "term": "chronic kidney disease",
+    "category": "condition",
+    "title": "Chronic Kidney Disease (CKD)",
+    "explanation": "Your kidneys are not filtering your blood as well as they should. Kidneys clean waste and extra water out of your blood. When they are damaged, waste can build up in your body and cause other health problems.",
+    "what_it_means": "Your kidneys work like a filter. Over time, conditions like diabetes and high blood pressure can damage that filter. Early CKD usually has no symptoms, which is why blood tests are important for catching it.",
+    "normal_range": "Kidney function is measured by eGFR. Normal is 90 or above. Below 60 for 3 months or more means chronic kidney disease.",
+    "when_to_worry": "Tell your doctor about swelling in your ankles or face, changes in how much you urinate, blood in your urine, or feeling very tired and nauseous.",
+    "tips": [
+      "manage your blood pressure and blood sugar",
+      "reduce salt in your diet",
+      "drink enough water but do not overdo it",
+      "avoid taking too much ibuprofen or other NSAIDs"
+    ],
+    "sources": ["National Kidney Foundation", "MedlinePlus"]
+  },
+  {
+    "term": "creatinine",
+    "category": "lab_test",
+    "title": "Creatinine (Kidney Function Test)",
+    "explanation": "Creatinine is a waste product that your muscles make. Your kidneys normally filter it out of your blood. If your creatinine level is high, it could mean your kidneys are not filtering as well as they should.",
+    "what_it_means": "Every time you use your muscles, they produce a little bit of creatinine. Healthy kidneys remove it from your blood and send it out in your urine. A high level in your blood suggests the kidneys might need some help.",
+    "normal_range": "Normal creatinine is about 0.7 to 1.3 mg/dL for men and 0.6 to 1.1 mg/dL for women. These ranges can vary by lab.",
+    "when_to_worry": "A single high reading does not always mean there is a problem. Your doctor will look at the trend over time and may order more tests.",
+    "tips": [
+      "stay hydrated",
+      "manage conditions that affect kidneys like diabetes and high blood pressure",
+      "tell your doctor about all medications and supplements you take"
+    ],
+    "sources": ["National Kidney Foundation", "MedlinePlus"]
+  },
+  {
+    "term": "egfr",
+    "category": "lab_test",
+    "title": "eGFR (Estimated Glomerular Filtration Rate)",
+    "explanation": "The eGFR is a number that estimates how well your kidneys are filtering waste from your blood. It is calculated from your creatinine level, age, sex, and other factors. A higher number is better.",
+    "what_it_means": "Think of eGFR like a score for your kidneys. A score of 90 or above is normal. The lower the number, the harder your kidneys are working. Your doctor uses this to check for kidney disease.",
+    "normal_range": "Normal is 90 or higher. 60-89 may need monitoring. Below 60 may indicate kidney disease. Below 15 is kidney failure.",
+    "when_to_worry": "If your eGFR is dropping over time, your doctor will want to find out why and may refer you to a kidney specialist.",
+    "tips": [
+      "get this test regularly if you have diabetes or high blood pressure",
+      "follow a kidney-friendly diet if recommended by your doctor"
+    ],
+    "sources": ["National Kidney Foundation", "MedlinePlus"]
+  },
+  {
+    "term": "complete blood count",
+    "category": "lab_test",
+    "title": "CBC (Complete Blood Count)",
+    "explanation": "A CBC is a common blood test that measures the different cells in your blood: red blood cells, white blood cells, and platelets. It helps your doctor check your overall health and look for problems like infection, anemia, or bleeding issues.",
+    "what_it_means": "Red blood cells carry oxygen. White blood cells fight infection. Platelets help your blood clot. By counting these cells, your doctor can spot many health conditions early.",
+    "normal_range": "Normal ranges vary by lab. Typical values: white blood cells 4,500-11,000, red blood cells 4.5-5.5 million (men) or 4.0-5.0 million (women), platelets 150,000-400,000.",
+    "when_to_worry": "Your doctor will explain if any values are out of range. A very low white count can mean infection risk. Very low platelets can mean bleeding risk.",
+    "tips": [
+      "this is a routine test so do not worry about having it done",
+      "some tests need fasting, ask your doctor if yours does"
+    ],
+    "sources": ["MedlinePlus", "Mayo Clinic"]
+  },
+  {
+    "term": "tsh",
+    "category": "lab_test",
+    "title": "TSH (Thyroid Stimulating Hormone)",
+    "explanation": "TSH is a hormone that tells your thyroid gland how much thyroid hormone to make. If your TSH is high, your thyroid might be underactive. If it is low, your thyroid might be overactive.",
+    "what_it_means": "Your thyroid is a small gland in your neck that controls your metabolism, energy, and body temperature. TSH is the signal from your brain telling the thyroid to speed up or slow down.",
+    "normal_range": "Normal TSH is usually between 0.4 and 4.0 mIU/L. This can vary slightly between labs.",
+    "when_to_worry": "Symptoms of thyroid problems include unexplained weight changes, feeling very tired or very anxious, hair loss, or feeling too hot or too cold all the time.",
+    "tips": [
+      "take thyroid medication on an empty stomach if prescribed",
+      "get your TSH checked regularly as your doctor recommends",
+      "tell your doctor about any new symptoms"
+    ],
+    "sources": ["American Thyroid Association", "MedlinePlus"]
+  },
+  {
+    "term": "blood pressure",
+    "category": "lab_test",
+    "title": "Blood Pressure Reading",
+    "explanation": "Blood pressure measures the force of blood pushing against your artery walls. It has two numbers: the top number (systolic) is the pressure when your heart beats, and the bottom number (diastolic) is the pressure when your heart rests between beats.",
+    "what_it_means": "The two numbers together tell your doctor how hard your heart is working. High numbers mean more force on your artery walls, which can damage them over time.",
+    "normal_range": "Normal is below 120/80 mmHg. Elevated is 120-129/less than 80. High blood pressure stage 1 is 130-139/80-89. Stage 2 is 140+/90+.",
+    "when_to_worry": "Blood pressure above 180/120 is a hypertensive crisis. Seek emergency care if you also have chest pain, shortness of breath, vision changes, or a severe headache.",
+    "tips": [
+      "measure your blood pressure at the same time each day",
+      "sit quietly for 5 minutes before measuring",
+      "do not smoke or drink caffeine 30 minutes before checking"
+    ],
+    "sources": ["American Heart Association", "CDC"]
+  },
+  {
+    "term": "bmi",
+    "category": "lab_test",
+    "title": "BMI (Body Mass Index)",
+    "explanation": "BMI is a number calculated from your height and weight. Doctors use it as a quick check to see if your weight might be putting you at risk for health problems. It is not a perfect measure but it is a useful starting point.",
+    "what_it_means": "A higher BMI can mean higher risk for conditions like heart disease, diabetes, and joint problems. But BMI does not tell the whole story since it does not account for muscle mass, bone density, or where you carry your weight.",
+    "normal_range": "Underweight is below 18.5. Normal is 18.5-24.9. Overweight is 25-29.9. Obese is 30 or above.",
+    "when_to_worry": "BMI is just one piece of the puzzle. Your doctor will look at your overall health, family history, and other test results too.",
+    "tips": [
+      "focus on healthy habits rather than just the number",
+      "small changes in diet and activity can make a big difference over time"
+    ],
+    "sources": ["CDC", "National Heart, Lung, and Blood Institute"]
+  },
+  {
+    "term": "cardiac arrest",
+    "category": "condition",
+    "title": "Cardiac Arrest",
+    "explanation": "Cardiac arrest is when the heart suddenly stops beating. It is different from a heart attack. During cardiac arrest, the heart cannot pump blood to the brain or other organs. It is a medical emergency that needs immediate treatment.",
+    "what_it_means": "The heart has an electrical system that keeps it beating in a regular rhythm. During cardiac arrest, that electrical system malfunctions and the heart stops. Without CPR or a defibrillator, it can be fatal within minutes.",
+    "normal_range": "A normal heart rhythm is 60-100 beats per minute at rest.",
+    "when_to_worry": "Cardiac arrest is always an emergency. Call 911 immediately if someone collapses and is not breathing normally. Start CPR right away if you can.",
+    "tips": [
+      "learn CPR and where the nearest AED is located",
+      "manage heart conditions with your doctor",
+      "know your family history of heart problems"
+    ],
+    "sources": ["American Heart Association", "MedlinePlus"]
+  },
+  {
+    "term": "atrial fibrillation",
+    "category": "condition",
+    "title": "Atrial Fibrillation (AFib)",
+    "explanation": "Your heart has an irregular or fast rhythm. Instead of beating in a steady pattern, the upper chambers of your heart quiver or flutter. This can cause blood to pool and increases the risk of blood clots.",
+    "what_it_means": "Normally your heart beats in a regular rhythm. With AFib, the electrical signals get mixed up and the upper chambers beat out of sync. You might feel your heart racing, fluttering, or skipping beats.",
+    "normal_range": "A normal heart rate at rest is 60-100 beats per minute with a regular rhythm.",
+    "when_to_worry": "Go to the emergency room if you have chest pain, severe shortness of breath, fainting, or feel very lightheaded.",
+    "tips": [
+      "take blood thinners as prescribed to prevent clots",
+      "limit caffeine and alcohol",
+      "manage stress and get enough sleep",
+      "keep your follow-up appointments"
+    ],
+    "sources": ["American Heart Association", "CDC"]
+  },
+  {
+    "term": "depression",
+    "category": "condition",
+    "title": "Depression (Major Depressive Disorder)",
+    "explanation": "Depression is more than just feeling sad. It is a medical condition that affects how you feel, think, and handle daily activities. It can cause lasting feelings of sadness, loss of interest, and trouble with sleep, energy, and concentration.",
+    "what_it_means": "Depression involves changes in brain chemistry. It is not a sign of weakness or something you can just snap out of. It is treatable with therapy, medication, or both.",
+    "normal_range": "Everyone feels down sometimes. Depression is diagnosed when these feelings last most of the day, nearly every day, for at least two weeks.",
+    "when_to_worry": "If you or someone you know has thoughts of self-harm or suicide, call 988 (Suicide and Crisis Lifeline) right away. You are not alone and help is available.",
+    "tips": [
+      "talk to your doctor about how you are feeling",
+      "stay connected with friends and family",
+      "try to keep a routine even when it feels hard",
+      "physical activity can help improve mood"
+    ],
+    "sources": ["National Institute of Mental Health", "MedlinePlus"]
+  },
+  {
+    "term": "anxiety",
+    "category": "condition",
+    "title": "Anxiety Disorder",
+    "explanation": "Anxiety is when you feel worried, nervous, or afraid more than usual and it starts to interfere with your daily life. Everyone feels anxious sometimes, but an anxiety disorder means these feelings are intense, long-lasting, and hard to control.",
+    "what_it_means": "Your body's fight-or-flight response gets triggered too easily or too often. This can cause racing thoughts, trouble sleeping, muscle tension, a fast heartbeat, and difficulty concentrating.",
+    "normal_range": "Some anxiety is normal and even helpful. It becomes a disorder when it is constant, overwhelming, and disrupts your daily routine.",
+    "when_to_worry": "See your doctor if anxiety is making it hard to work, sleep, or maintain relationships. Also seek help if you are having panic attacks or avoiding situations because of fear.",
+    "tips": [
+      "deep breathing and mindfulness can help in the moment",
+      "regular exercise reduces anxiety symptoms",
+      "limit caffeine which can make anxiety worse",
+      "therapy, especially CBT, is very effective for anxiety"
+    ],
+    "sources": ["National Institute of Mental Health", "Anxiety and Depression Association of America"]
+  },
+  {
+    "term": "obesity",
+    "category": "condition",
+    "title": "Obesity",
+    "explanation": "Obesity means having a significantly higher amount of body fat than what is considered healthy. It increases the risk for many health problems including heart disease, diabetes, and joint issues.",
+    "what_it_means": "Extra body fat, especially around the belly, can affect how your body works. It can raise blood pressure, increase blood sugar, and cause inflammation. The good news is that even modest weight loss can improve your health.",
+    "normal_range": "A BMI of 30 or higher is classified as obese. A waist measurement over 40 inches for men or 35 inches for women also indicates higher risk.",
+    "when_to_worry": "Talk to your doctor if your weight is making it hard to be active, if you have sleep apnea, or if you are developing related conditions like diabetes or high blood pressure.",
+    "tips": [
+      "set small, realistic goals for activity and eating",
+      "focus on adding healthy foods rather than just restricting",
+      "find physical activities you enjoy",
+      "talk to your doctor about weight management options"
+    ],
+    "sources": ["CDC", "National Institute of Diabetes and Digestive and Kidney Diseases"]
+  },
+  {
+    "term": "osteoarthritis",
+    "category": "condition",
+    "title": "Osteoarthritis",
+    "explanation": "Osteoarthritis is when the cushion between your bones, called cartilage, wears down over time. This causes pain, stiffness, and swelling in your joints, most often in the hands, knees, hips, and spine.",
+    "what_it_means": "Cartilage is a smooth, rubbery material that lets your joints move easily. As it wears away, bone starts rubbing against bone, which hurts. It is the most common type of arthritis and often comes with age.",
+    "normal_range": "Some joint stiffness with age is normal. Osteoarthritis is diagnosed when pain and stiffness are persistent and affect your daily activities.",
+    "when_to_worry": "See your doctor if joint pain is getting worse, if you cannot do normal activities, or if you notice swelling, redness, or warmth in a joint.",
+    "tips": [
+      "stay active with low-impact exercises like swimming or walking",
+      "maintain a healthy weight to reduce stress on joints",
+      "use hot or cold packs for pain relief",
+      "talk to your doctor about pain management options"
+    ],
+    "sources": ["Arthritis Foundation", "MedlinePlus"]
+  },
+  {
+    "term": "hemoglobin",
+    "category": "lab_test",
+    "title": "Hemoglobin",
+    "explanation": "Hemoglobin is a protein inside your red blood cells that carries oxygen from your lungs to the rest of your body. Low hemoglobin means your blood is not carrying as much oxygen as it should, which can make you feel tired.",
+    "what_it_means": "Think of hemoglobin as the delivery truck for oxygen. If you do not have enough trucks, your body's cells do not get the oxygen they need. This is the main thing doctors check for anemia.",
+    "normal_range": "Normal hemoglobin is 14-18 g/dL for men and 12-16 g/dL for women.",
+    "when_to_worry": "Hemoglobin below 7 g/dL is considered severe anemia and may need a blood transfusion. Report symptoms like extreme fatigue, pale skin, or shortness of breath.",
+    "tips": [
+      "eat iron-rich foods like red meat, spinach, and fortified cereals",
+      "pair iron-rich foods with vitamin C for better absorption"
+    ],
+    "sources": ["MedlinePlus", "American Society of Hematology"]
+  },
+  {
+    "term": "triglycerides",
+    "category": "lab_test",
+    "title": "Triglycerides",
+    "explanation": "Triglycerides are a type of fat found in your blood. Your body turns extra calories you do not need right away into triglycerides and stores them in fat cells. High levels can raise your risk of heart disease.",
+    "what_it_means": "When you eat, your body uses what it needs for energy and converts the rest into triglycerides. If you regularly eat more calories than you burn, especially from sugary or starchy foods, your triglyceride levels can get too high.",
+    "normal_range": "Normal is under 150 mg/dL. Borderline high is 150-199. High is 200-499. Very high is 500 or above.",
+    "when_to_worry": "Very high triglycerides (over 500) can cause inflammation of the pancreas, which is a serious condition. Talk to your doctor about treatment if your levels are high.",
+    "tips": [
+      "cut back on sugar and refined carbs",
+      "limit alcohol which raises triglycerides",
+      "exercise regularly",
+      "eat more omega-3 rich foods like fish"
+    ],
+    "sources": ["American Heart Association", "Mayo Clinic"]
+  },
+  {
+    "term": "amlodipine",
+    "category": "medication",
+    "title": "Amlodipine (Norvasc)",
+    "explanation": "Amlodipine is a blood pressure medicine that belongs to a group called calcium channel blockers. It relaxes and widens your blood vessels so blood flows more easily and your heart does not have to work as hard.",
+    "what_it_means": "Calcium makes blood vessel muscles tighten. Amlodipine blocks some of that calcium from entering the muscle cells, keeping the vessels relaxed. This lowers your blood pressure.",
+    "normal_range": "Your doctor will set a target blood pressure for you, usually under 130/80.",
+    "when_to_worry": "Tell your doctor if you have swelling in your ankles or feet, feel dizzy, or notice your heart beating fast or irregularly.",
+    "tips": [
+      "take it at the same time every day",
+      "do not stop taking it suddenly without talking to your doctor",
+      "mild ankle swelling is a common side effect"
+    ],
+    "sources": ["MedlinePlus", "Mayo Clinic"]
+  },
+  {
+    "term": "omeprazole",
+    "category": "medication",
+    "title": "Omeprazole (Prilosec)",
+    "explanation": "Omeprazole reduces the amount of acid your stomach makes. It is used to treat heartburn, acid reflux, and ulcers. It helps your esophagus and stomach heal from acid damage.",
+    "what_it_means": "Your stomach makes acid to help digest food. Sometimes it makes too much, or the acid goes up into your esophagus causing a burning feeling. Omeprazole turns down the acid production so things can heal.",
+    "normal_range": "Heartburn that happens more than twice a week may need treatment. Occasional heartburn is normal.",
+    "when_to_worry": "See your doctor if you have trouble swallowing, unintended weight loss, vomiting blood, or black tarry stools.",
+    "tips": [
+      "take it 30 minutes before your first meal of the day",
+      "do not use it long-term without your doctor knowing",
+      "raise the head of your bed to reduce nighttime reflux"
+    ],
+    "sources": ["MedlinePlus", "FDA"]
+  },
+  {
+    "term": "levothyroxine",
+    "category": "medication",
+    "title": "Levothyroxine (Synthroid)",
+    "explanation": "Levothyroxine replaces a hormone that your thyroid gland is not making enough of. It helps your body's metabolism, energy levels, and overall function return to normal.",
+    "what_it_means": "If your thyroid is underactive, your body slows down. You might feel tired, cold, or gain weight easily. Levothyroxine gives your body the thyroid hormone it is missing.",
+    "normal_range": "Your doctor will adjust the dose based on your TSH blood test. The goal is to get your TSH into the normal range.",
+    "when_to_worry": "Tell your doctor if you feel jittery, have a fast heartbeat, lose weight without trying, or feel too hot. These could mean the dose is too high.",
+    "tips": [
+      "take it on an empty stomach first thing in the morning",
+      "wait 30-60 minutes before eating or drinking anything except water",
+      "do not take it with calcium or iron supplements at the same time",
+      "get your TSH levels checked regularly"
+    ],
+    "sources": ["American Thyroid Association", "MedlinePlus"]
+  },
+  {
+    "term": "albuterol",
+    "category": "medication",
+    "title": "Albuterol (ProAir, Ventolin)",
+    "explanation": "Albuterol is a rescue inhaler that quickly opens up your airways when you have trouble breathing. It is used for asthma attacks and other breathing problems. It works within minutes to help you breathe easier.",
+    "what_it_means": "When your airways tighten up during an asthma attack, albuterol relaxes the muscles around them so they open back up. It is meant for quick relief, not daily prevention.",
+    "normal_range": "Using your rescue inhaler 2 or fewer times per week (not counting before exercise) means your asthma is well controlled.",
+    "when_to_worry": "If you are using your rescue inhaler more than twice a week, your asthma may not be well controlled. Talk to your doctor about a daily controller medication.",
+    "tips": [
+      "always carry your inhaler with you",
+      "shake the inhaler before each use",
+      "use a spacer if your doctor recommends one",
+      "rinse your mouth after using it"
+    ],
+    "sources": ["American Lung Association", "MedlinePlus"]
+  },
+  {
+    "term": "aspirin",
+    "category": "medication",
+    "title": "Aspirin",
+    "explanation": "Aspirin is a common medicine used to relieve pain, reduce fever, and lower inflammation. In low doses, it can also help prevent blood clots, which is why some doctors prescribe a daily baby aspirin for heart protection.",
+    "what_it_means": "Aspirin makes your blood platelets less sticky, which helps prevent clots from forming in your arteries. Clots can cause heart attacks and strokes, so aspirin can lower that risk in some people.",
+    "normal_range": "Low-dose aspirin for heart protection is usually 81mg per day. Only take daily aspirin if your doctor recommends it.",
+    "when_to_worry": "Stop taking aspirin and call your doctor if you have stomach pain, black or bloody stools, or unusual bruising or bleeding.",
+    "tips": [
+      "take it with food to reduce stomach irritation",
+      "tell your doctor you take aspirin before any surgery",
+      "do not give aspirin to children or teenagers"
+    ],
+    "sources": ["American Heart Association", "MedlinePlus"]
+  },
+  {
+    "term": "gerd",
+    "category": "condition",
+    "title": "GERD (Gastroesophageal Reflux Disease)",
+    "explanation": "GERD is when stomach acid frequently flows back up into your esophagus, the tube connecting your mouth and stomach. This can cause a burning feeling in your chest known as heartburn. It happens when the valve at the bottom of your esophagus does not close properly.",
+    "what_it_means": "There is a muscle ring at the bottom of your esophagus that acts like a one-way door. With GERD, that door does not close all the way, so acid splashes up. Over time, this can irritate and damage your esophagus.",
+    "normal_range": "Occasional heartburn is normal. GERD is diagnosed when it happens more than twice a week and affects your daily life.",
+    "when_to_worry": "See your doctor if you have trouble swallowing, chest pain, unexplained weight loss, or vomiting. Long-term untreated GERD can cause more serious problems.",
+    "tips": [
+      "avoid eating large meals before bedtime",
+      "raise the head of your bed 6-8 inches",
+      "limit foods that trigger symptoms like spicy, fatty, or acidic foods",
+      "do not lie down for 2-3 hours after eating"
+    ],
+    "sources": ["American College of Gastroenterology", "MedlinePlus"]
+  },
+  {
+    "term": "urinalysis",
+    "category": "lab_test",
+    "title": "Urinalysis (Urine Test)",
+    "explanation": "A urinalysis is a test that checks your urine for signs of disease or infection. It looks at the color, clarity, and chemical makeup of your urine. It can help detect kidney disease, diabetes, urinary tract infections, and other conditions.",
+    "what_it_means": "Your kidneys filter your blood and the waste goes out in your urine. By testing your urine, doctors can see if your kidneys are working well, if you have an infection, or if there are other issues.",
+    "normal_range": "Normal urine is clear to pale yellow with no protein, blood, or bacteria.",
+    "when_to_worry": "Tell your doctor if your urine is very dark, has blood in it, is cloudy, or has a strong unusual smell. Also report pain or burning during urination.",
+    "tips": [
+      "drink plenty of water for an accurate sample",
+      "follow the instructions for collecting a clean catch sample"
+    ],
+    "sources": ["MedlinePlus", "National Kidney Foundation"]
+  }
+]
