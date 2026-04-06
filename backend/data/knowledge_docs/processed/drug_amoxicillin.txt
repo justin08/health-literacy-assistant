@@ -1,0 +1,7 @@
+# Amoxicillin
+Type: Medication / Drug Information
+
+Amoxicillin is used to treat certain infections caused by bacteria, such as pneumonia; bronchitis (infection of the airway tubes leading to the lungs); and infections of the ears, nose, throat, urinary tract, and skin. It is also used in combination with other medications to eliminate H. pylori, a bacteria that causes ulcers. Amoxicillin is in a class of medications called penicillin-like antibiotics. It works by stopping the growth of bacteria. Antibiotics such as amoxicillin will not work for colds, flu, and other viral infections. Taking antibiotics when they are not needed increases your risk of getting an infection later that resists antibiotic treatment.
+
+Source: https://medlineplus.gov/druginfo/meds/a685001.html?utm_source=mplusconnect&utm_medium=service
+Categories: Drugs and Supplements

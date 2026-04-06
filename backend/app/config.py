@@ -14,6 +14,10 @@ class Settings(BaseSettings):
     openai_api_key: str = ""
     openai_model: str = "gpt-5.4-nano"
 
+    # LLM settings
+    llm_temperature: float = 0.2
+    llm_max_tokens: int = 1024
+
     chroma_persist_dir: str = "./chroma_data"
     data_dir: str = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
     cors_origins: str = "http://localhost:8501,http://localhost:3000"

@@ -1,0 +1,7 @@
+# Phenytoin
+Type: Medication / Drug Information
+
+Phenytoin is used to control certain type of seizures, and to treat and prevent seizures that may begin during or after surgery to the brain or nervous system. Phenytoin is in a class of medications called anticonvulsants. It works by decreasing abnormal electrical activity in the brain.
+
+Source: https://medlineplus.gov/druginfo/meds/a682022.html?utm_source=mplusconnect&utm_medium=service
+Categories: Drugs and Supplements

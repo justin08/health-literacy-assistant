@@ -1,0 +1,7 @@
+# Donepezil
+Type: Medication / Drug Information
+
+Donepezil is used to treat dementia (a brain disorder that affects the ability to remember, think clearly, communicate, and perform daily activities and may cause changes in mood and personality) in people who have Alzheimer's disease (AD; a brain disease that slowly destroys the memory and the ability to think, learn, communicate and handle daily activities). Donepezil is in a class of medications called cholinesterase inhibitors. It improves mental function (such as memory, attention, the ability to interact with others, speak, think clearly, and perform regular daily activities) by increasing the amount of a certain naturally occurring substance in the brain. Donepezil may improve the ability to think and remember or slow the loss of these abilities in people who have AD. However, donepezil will not cure AD or prevent the loss of mental abilities at some time in the future.
+
+Source: https://medlineplus.gov/druginfo/meds/a697032.html?utm_source=mplusconnect&utm_medium=service
+Categories: Drugs and Supplements

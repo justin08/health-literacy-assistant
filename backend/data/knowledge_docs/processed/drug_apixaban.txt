@@ -1,0 +1,7 @@
+# Apixaban
+Type: Medication / Drug Information
+
+Apixaban is used to:     prevent strokes or blood clots in people who have atrial fibrillation (a condition where the heart beats irregularly and can lead to clots and stroke) in adults.  prevent deep vein thrombosis (DVT; a blood clot, usually in the leg) and pulmonary embolism (PE; a blood clot in the lung) in certain situations.   treat DVT and PE  Apixaban is in a class of medications called factor Xa inhibitors. It works by blocking a natural substance that helps blood clots to form.
+
+Source: https://medlineplus.gov/druginfo/meds/a613032.html?utm_source=mplusconnect&utm_medium=service
+Categories: Drugs and Supplements

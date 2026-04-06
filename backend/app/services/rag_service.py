@@ -1,178 +1,172 @@
-import json
-import os
 import logging
+import os
 import textstat
-from app.config import settings
+
+from app.services.kb_retriever import Retriever
+from app.services.prompts import (
+    SYSTEM_PROMPT,
+    build_observation_prompt,
+    build_condition_prompt,
+    build_medication_prompt,
+    build_general_prompt,
+)
 
 logger = logging.getLogger(__name__)
 
-_llama_available = False
-_langchain_available = False
-
+_openai_available = False
 try:
-    from llama_index.core import VectorStoreIndex, Document, StorageContext, Settings as LlamaSettings
-    from llama_index.vector_stores.chroma import ChromaVectorStore
-    from llama_index.embeddings.openai import OpenAIEmbedding
-    import chromadb
-    _llama_available = True
+    from openai import OpenAI
+    _openai_available = True
 except ImportError:
-    logger.warning("llama-index not installed, using fallback")
-
-try:
-    from langchain_openai import ChatOpenAI
-    from langchain.prompts import ChatPromptTemplate
-    _langchain_available = True
-except ImportError:
-    logger.warning("langchain not installed, using fallback")
+    logger.warning("openai package not installed")
 
 
 class RAGService:
     def __init__(self):
-        self.index = None
-        self.fallback_kb = {}
+        self.retriever = None
+        self.llm = None
         self.ready = False
-        self._load_kb()
+        self._init()
 
-    def _load_kb(self):
-        kb_path = os.path.join(settings.data_dir, "knowledge_base.json")
+    def _init(self):
         try:
-            with open(kb_path) as f:
-                entries = json.load(f)
-        except FileNotFoundError:
-            logger.error(f"kb not found at {kb_path}")
-            entries = []
+            self.retriever = Retriever()
 
-        for entry in entries:
-            self.fallback_kb[entry["term"].lower()] = entry
+            api_key = os.getenv("OPENAI_API_KEY", "")
+            self.model = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+            self.temperature = float(os.getenv("LLM_TEMPERATURE", "0.3"))
+            self.max_tokens = int(os.getenv("LLM_MAX_TOKENS", "1024"))
 
-        if settings.openai_api_key and _llama_available:
-            try:
-                self._build_index(entries)
+            if api_key and _openai_available:
+                self.llm = OpenAI(api_key=api_key)
+                logger.info("LLM ready: OpenAI %s", self.model)
+            else:
+                if not api_key:
+                    logger.warning("No OPENAI_API_KEY — LLM generation disabled")
+                if not _openai_available:
+                    logger.warning("openai package not installed")
+
+            if self.retriever.ready:
                 self.ready = True
-                logger.info("rag ready (llamaindex + chromadb)")
-            except Exception as e:
-                logger.error(f"vector store init failed: {e}")
-        else:
-            if not settings.openai_api_key:
-                logger.info("no openai key, running fallback")
+                logger.info("RAG ready — %d chunks indexed", self.retriever.store.count())
+            else:
+                logger.warning("RAG not ready — knowledge base empty")
 
-    def _build_index(self, entries):
-        client = chromadb.PersistentClient(path=settings.chroma_persist_dir)
-        collection = client.get_or_create_collection("medical_knowledge")
+        except Exception as e:
+            logger.error("RAG init failed: %s", e)
 
-        vector_store = ChromaVectorStore(chroma_collection=collection)
-        storage_context = StorageContext.from_defaults(vector_store=vector_store)
-        LlamaSettings.embed_model = OpenAIEmbedding(api_key=settings.openai_api_key)
+    def _call_llm(self, system_prompt: str, user_prompt: str) -> str:
+        """Call OpenAI and return the response text."""
+        if not self.llm:
+            return ""
 
-        # seed if empty
-        if collection.count() == 0:
-            logger.info(f"seeding {len(entries)} kb entries")
-            docs = []
-            for entry in entries:
-                text = f"{entry['title']}\n\n{entry['explanation']}"
-                if entry.get("what_it_means"):
-                    text += f"\n\nwhat it means for you: {entry['what_it_means']}"
-                if entry.get("normal_range"):
-                    text += f"\n\nnormal range: {entry['normal_range']}"
-                if entry.get("when_to_worry"):
-                    text += f"\n\nwhen to call your doctor: {entry['when_to_worry']}"
-                if entry.get("tips"):
-                    text += "\n\ntips:\n" + "\n".join(f"- {t}" for t in entry["tips"])
-
-                docs.append(Document(
-                    text=text,
-                    metadata={
-                        "term": entry["term"],
-                        "category": entry["category"],
-                        "sources": ", ".join(entry.get("sources", [])),
-                    },
-                ))
-
-            self.index = VectorStoreIndex.from_documents(docs, storage_context=storage_context)
-        else:
-            logger.info(f"loaded existing collection ({collection.count()} docs)")
-            self.index = VectorStoreIndex.from_vector_store(vector_store)
+        response = self.llm.chat.completions.create(
+            model=self.model,
+            max_tokens=self.max_tokens,
+            temperature=self.temperature,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+        )
+        return response.choices[0].message.content
 
     def explain(self, term: str, context: str = "") -> dict:
-        if self.index and settings.openai_api_key and _langchain_available:
-            try:
-                return self._rag_explain(term, context)
-            except Exception as e:
-                logger.error(f"rag failed, using fallback: {e}")
+        """Explain a medical term using RAG.
 
-        return self._fallback_explain(term)
+        Main entry point called by explain_routes.py.
+        Same return format as the original.
+        """
+        if not self.ready:
+            return self._fallback_explain(term)
 
-    def _rag_explain(self, term: str, context: str) -> dict:
-        # retrieve from chromadb via llamaindex
-        retriever = self.index.as_retriever(similarity_top_k=3)
-        query = f"explain: {term}"
-        if context:
-            query += f" (context: {context})"
+        try:
+            return self._rag_explain(term, context)
+        except Exception as e:
+            logger.error("RAG explain failed: %s", e)
+            return self._fallback_explain(term)
 
-        nodes = retriever.retrieve(query)
-        chunks = "\n\n---\n\n".join([n.text for n in nodes])
+    def explain_observation(self, display: str, value: float,
+                            unit: str, date: str, flag: str = "") -> dict:
+        """Explain a lab result with full clinical context."""
+        query = f"{display}: {value} {unit}"
+        if flag:
+            query += f". Interpretation: {flag}"
 
+        context = self.retriever.retrieve_as_context(query)
+        prompt = build_observation_prompt(display, value, unit, date, flag, context)
+        return self._generate_and_score(prompt)
+
+    def explain_condition(self, display: str, status: str, date: str) -> dict:
+        """Explain a diagnosis."""
+        query = f"Diagnosis: {display}. Status: {status}"
+        context = self.retriever.retrieve_as_context(query)
+        prompt = build_condition_prompt(display, status, date, context)
+        return self._generate_and_score(prompt)
+
+    def explain_medication(self, display: str, instructions: str, date: str) -> dict:
+        """Explain a prescription."""
+        query = f"Medication: {display}. {instructions}"
+        context = self.retriever.retrieve_as_context(query)
+        prompt = build_medication_prompt(display, instructions, date, context)
+        return self._generate_and_score(prompt)
+
+    def _rag_explain(self, term: str, patient_context: str) -> dict:
+        """General-purpose explain for the /api/explain endpoint."""
+        context = self.retriever.retrieve_as_context(term)
+        prompt = build_general_prompt(term, context, patient_context)
+        result = self._generate_and_score(prompt)
+
+        # Add source URLs from retrieval
+        results = self.retriever.retrieve(term, top_k=3)
         sources = []
-        for n in nodes:
-            src = n.metadata.get("sources", "")
-            if src:
-                sources.extend([s.strip() for s in src.split(",")])
-        sources = list(set(sources)) or ["Medical Reference"]
+        for r in results:
+            url = r["metadata"].get("source_url", "")
+            title = r["metadata"].get("title", "")
+            if url:
+                sources.append(url)
+            elif title:
+                sources.append(title)
+        result["sources"] = sources if sources else ["MedlinePlus"]
 
-        # generate with langchain + openai
-        llm = ChatOpenAI(
-            model=settings.openai_model,
-            api_key=settings.openai_api_key,
-            temperature=0.3,
-        )
+        return result
 
-        prompt = ChatPromptTemplate.from_messages([
-            ("system",
-             "you explain medical terms in plain language a regular person can "
-             "understand. target a 6th grade reading level. only use info from "
-             "the reference material. keep it to 2-3 sentences."),
-            ("human",
-             "reference material:\n\n{chunks}\n\n"
-             "explain this in simple words: {term}\n{ctx}\n"
-             "just give the explanation, nothing else."),
-        ])
+    def _generate_and_score(self, user_prompt: str) -> dict:
+        """Call LLM, score readability, return formatted result."""
+        if not self.llm:
+            return self._fallback_explain(user_prompt[:50])
 
-        ctx = f"patient context: {context}" if context else ""
-        chain = prompt | llm
-        resp = chain.invoke({"chunks": chunks, "term": term, "ctx": ctx})
-
-        explanation = resp.content
+        explanation = self._call_llm(SYSTEM_PROMPT, user_prompt)
         score = textstat.flesch_kincaid_grade(explanation)
 
         return {
             "plain_language": explanation,
-            "sources": sources,
+            "sources": ["MedlinePlus"],
             "readability_score": round(score, 1),
         }
 
     def _fallback_explain(self, term: str) -> dict:
-        t = term.lower().strip()
+        """Fallback when LLM is unavailable — returns raw retrieved text."""
+        if self.retriever and self.retriever.ready:
+            results = self.retriever.retrieve(term, top_k=1)
+            if results and results[0]["score"] > 0.4:
+                text = results[0]["text"]
+                lines = text.split("\n\n", 1)
+                body = lines[1] if len(lines) > 1 else text
+                if len(body) > 500:
+                    body = body[:500].rsplit(".", 1)[0] + "."
 
-        # exact
-        if t in self.fallback_kb:
-            entry = self.fallback_kb[t]
-            return {
-                "plain_language": entry["explanation"],
-                "sources": entry.get("sources", ["Medical Reference"]),
-                "readability_score": round(textstat.flesch_kincaid_grade(entry["explanation"]), 1),
-            }
-
-        # partial
-        for key, entry in self.fallback_kb.items():
-            if key in t or t in key:
                 return {
-                    "plain_language": entry["explanation"],
-                    "sources": entry.get("sources", ["Medical Reference"]),
-                    "readability_score": round(textstat.flesch_kincaid_grade(entry["explanation"]), 1),
+                    "plain_language": body,
+                    "sources": ["MedlinePlus"],
+                    "readability_score": round(textstat.flesch_kincaid_grade(body), 1),
                 }
 
         return {
-            "plain_language": f"'{term}' is a medical term. ask your doctor or nurse to explain what this means for you.",
+            "plain_language": (
+                f"'{term}' is a medical term. Ask your doctor or "
+                "nurse to explain what this means for you."
+            ),
             "sources": ["General"],
             "readability_score": 6.0,
         }

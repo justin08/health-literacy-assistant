@@ -1,0 +1,7 @@
+# Fenofibrate
+Type: Medication / Drug Information
+
+Fenofibrate is used with a low-fat diet, exercise, and sometimes with other medications to reduce the amounts of fatty substances such as cholesterol and triglycerides in the blood and to increase the amount of HDL (high-density lipoprotein; a type of fatty substance that decreases the risk of heart disease) in the blood. Build-up of cholesterol and fats along the walls of the arteries (a process known as atherosclerosis) decreases the blood flow and, therefore, the oxygen supply to the heart, brain, and other parts of the body. This increases the risk of heart disease, angina (chest pain), strokes, and heart attacks. Although fenofibrate decreases the levels of fatty substances in the blood, it has not been shown to decrease the risk of heart attacks or strokes. Fenofibrate is in a class of medications called antilipemic agents. It works by speeding the natural processes that remove cholesterol from the body.
+
+Source: https://medlineplus.gov/druginfo/meds/a601052.html?utm_source=mplusconnect&utm_medium=service
+Categories: Drugs and Supplements
