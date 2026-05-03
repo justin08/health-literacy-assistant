@@ -1,8 +1,12 @@
+"""RAG service — ties retrieval, prompts, and LLM together.
+"""
+
 import logging
 import os
 import textstat
 
 from app.services.kb_retriever import Retriever
+from app.services.safety import check_safety
 from app.services.prompts import (
     SYSTEM_PROMPT,
     build_observation_prompt,
@@ -132,11 +136,16 @@ class RAGService:
         return result
 
     def _generate_and_score(self, user_prompt: str) -> dict:
-        """Call LLM, score readability, return formatted result."""
+        """Call LLM, run safety check, score readability."""
         if not self.llm:
             return self._fallback_explain(user_prompt[:50])
 
         explanation = self._call_llm(SYSTEM_PROMPT, user_prompt)
+
+        # Run safety checks — may modify text (e.g., add disclaimer)
+        safety_result = check_safety(explanation)
+        explanation = safety_result["text"]
+
         score = textstat.flesch_kincaid_grade(explanation)
 
         return {
